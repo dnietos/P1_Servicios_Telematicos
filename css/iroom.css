@@ -1,0 +1,67 @@
+body {
+
+    font-family: Arial, Helvetica, sans-serif; /* Intenta usar Arial. Si no puedes, prueba Helvetica. Y si tampoco puedes, utiliza una fuente genérica sans-serif. */
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #222222;
+
+}
+
+header {
+    background-color: #1f3a5f;
+    color: white;
+    padding: 25px; /* espacio interior de un elemento; cuando solo hay un valor, se aplica a los cuatro lados */
+}
+
+nav { /* barra de navegación */
+    background-color: white;
+    padding: 15px 25px; /* cuando hay dos valores, el primero se aplica a los lados verticales y el segundo a los horizontales */
+}
+     
+nav a { /* enlaces dentro de la barra de navegación */
+    color: #1f3a5f;
+    text-decoration: none;
+    font-weight: bold; 
+    margin-right: 20px;
+}
+
+nav a:focus { /* cuando un enlace está enfocado, por ejemplo al hacer clic en él o al navegar con el teclado */
+    outline: 2px solid #1f3a5f; /* contorno alrededor del enlace enfocado: grosor, línea continua y color */
+}
+
+.contenedor-secciones { /* busca una class que se llame contenedor-secciones */
+    display: flex; /* flex nos permite organizar fácilmente los elementos que están dentro del contenedor */
+    gap: 30px; /*Deja 30 píxeles de separación entre las dos <section>.*/
+    padding: 25px; 
+}
+
+.contenedor-secciones section { /* selecciona las section que están dentro de contenedor-secciones */
+    flex: 1; /* hace que las dos secciones se repartan por igual el espacio disponible */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;/* redondea las esquinas del elemento */
+}
+
+footer {
+    background-color: #1f3a5f;
+    color: white;
+    text-align: center; /* centra el texto dentro del footer */
+    padding: 15px;
+}
+
+@media (max-width: 700px) { /* media aplica los estilos dentro de este bloque solo si la pantalla tiene un ancho máximo de 700 píxeles */
+
+    .contenedor-secciones {
+        flex-direction: column; /* cambia la dirección de los elementos dentro del contenedor a columna, es decir, uno debajo del otro */
+    }
+
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 26px;
+    color: #1f3a5f;
+}
