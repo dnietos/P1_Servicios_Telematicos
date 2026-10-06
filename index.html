@@ -69,13 +69,13 @@
                         Ver localización en Google Maps
 
                     </a>
-                    <img src="imagenes/images.jpeg" ="Imagen de la Smart Room" 
+                    <img src="imagenes/images.jpeg" alt="Imagen de la Smart Room" 
                     width="300" 
                     height="200">
                 </section>
 
 
-                <section
+                <section>
                     <h2>Sensores</h2>
                 
                     <ul>
@@ -121,17 +121,17 @@
             botonTema.addEventListener("click", cambiarTema);
            //ELEMENTO.addEventListener("EVENTO","FUNCIÓN");
 
-           const tema= localStorage.getItem("tema")
+           const tema= localStorage.getItem("tema");
 
             if (tema === "oscuro") {
-                document.body.classList.add("modo-oscuro")
+                document.body.classList.add("modo-oscuro");
                 botonTema.textContent = "Modo claro";
             }
 
 
            function cambiarTema() {
 
-            document.body.classList.toggle("modo-oscuro")
+            document.body.classList.toggle("modo-oscuro");
 
             //El javascript no se conecta directamente con el css, con toggle añade o quita la clase modo-oscuro al <body<, y el css aplica los estilos correspondientes según la clase que tenga el <body> ya q estan conectados de antes.
 
