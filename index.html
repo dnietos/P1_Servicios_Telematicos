@@ -3,7 +3,8 @@
 <html lang="es">
 
     <head>
-        <meta charset="UTF-8"> /*    permite representar correctamente tildes, ñ, símbolos, etc. */
+        <meta charset="UTF-8"> 
+        <!-- permite representar correctamente tildes, ñ, símbolos, etc. -->
         <title>Smart Room</title>
         <link rel="stylesheet" href="css/iroom.css"> <!-- conecta el HTML con otro archivo, href es la ruta del archivo -->
 
@@ -34,14 +35,18 @@
 
                 <a href="minombre.html">Nombre</a>
 
-
+                <button id="boton-tema">Modo oscuro</button>
+            
 
             </nav>
 
             
 
-            <aside> <!-- información secundaria o complementaria -->
+            <aside id="bienvenida"> 
 
+                <!-- información secundaria o complementaria --> 
+                <!-- el id permite luego referenciarlo en CSS o JavaScript -->
+            
 
             </aside>
 
@@ -93,6 +98,58 @@
             
 
         </main>
+
+        <script>
+
+            const fname = localStorage.getItem("fname");
+            // recupera de localStorage el nombre guardado con la clave fname.
+
+            const bienvenida = document.getElementById("bienvenida"); 
+
+            
+            if (fname) {
+
+                bienvenida.textContent = "Hola " + fname + ": Bienvenido a Smart Room."; // mete este tesxto dentro del elemento con id bienvenida (<aside>)
+                
+            }
+
+
+
+
+            const botonTema = document.getElementById("boton-tema");
+
+            botonTema.addEventListener("click", cambiarTema);
+           //ELEMENTO.addEventListener("EVENTO","FUNCIÓN");
+
+           const tema= localStorage.getItem("tema")
+
+            if (tema === "oscuro") {
+                document.body.classList.add("modo-oscuro");
+                botonTema.textContent = "Modo claro";
+            }
+
+
+           function cambiarTema() {
+
+            document.body.classList.toggle("modo-oscuro");
+
+            //El javascript no se conecta directamente con el css, con toggle añade o quita la clase modo-oscuro al <body<, y el css aplica los estilos correspondientes según la clase que tenga el <body> ya q estan conectados de antes.
+
+            if (document.body.classList.contains("modo-oscuro")) {
+
+                localStorage.setItem("tema", "oscuro");
+                botonTema.textContent = "Modo claro";
+
+            } else {
+                localStorage.setItem("tema", "claro");
+                botonTema.textContent = "Modo oscuro";
+            }
+
+
+            }
+
+
+        </script>
 
 
     </body>

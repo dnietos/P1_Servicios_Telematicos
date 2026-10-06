@@ -40,6 +40,12 @@ nav a:focus { /* cuando un enlace está enfocado, por ejemplo al hacer clic en �
     background-color: white;
     padding: 20px;
     border-radius: 8px;/* redondea las esquinas del elemento */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* esto es un extra mio para dar como sombra a la caja*/
+}
+.contenedor-secciones img {
+    display: block;
+    margin-top: 20px;
+    border-radius: 8px;
 }
 
 footer {
@@ -49,10 +55,23 @@ footer {
     padding: 15px;
 }
 
+#bienvenida {
+    padding: 15px 25px;
+    background-color: #e8eef5;
+    font-weight: bold;
+}
+
+/*hasta aquí es para el index.html*/
+
+
 @media (max-width: 700px) { /* media aplica los estilos dentro de este bloque solo si la pantalla tiene un ancho máximo de 700 píxeles */
 
     .contenedor-secciones {
         flex-direction: column; /* cambia la dirección de los elementos dentro del contenedor a columna, es decir, uno debajo del otro */
+    }
+
+    .contenedor-formulario {
+    flex-direction: column;
     }
 
 }
@@ -65,3 +84,69 @@ h2 {
     font-size: 26px;
     color: #1f3a5f;
 }
+
+/* el h1 y h2 aparecen en index.html y config.html  por eso los estilos se aplican los dos */
+
+.contenedor-formulario {
+    display: flex; 
+    gap: 30px; /* Deja 30 píxeles de separación entre las dos <section>.*/
+    padding: 25px; /* espacio interior de un elemento; cuando solo hay un valor, se aplica a los cuatro lados */
+}
+
+.columna-formulario label {
+    display: block;
+    margin-top: 10px;
+}
+
+.columna-formulario input[type="checkbox"] + label {
+    display: inline; /* hace que el label esté en la misma línea que el checkbox */
+} /*busca elementos input cuyo type sea exactamente checkbox.*/
+
+.columna-formulario {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#enlace-vuelta{
+    margin-left: 20px;
+}
+
+/* hasta aquí era para config.html */
+
+.contenedor-nombre{
+background-color: white;
+padding: 20px;
+margin: 25px;
+border-radius: 8px;
+}
+
+body.modo-oscuro {
+    background-color: #222222;
+    color: white;
+}
+
+body.modo-oscuro #bienvenida {
+    background-color: #5f8199;
+    color: white;
+}
+
+body.modo-oscuro .contenedor-secciones section {
+    background-color: #333333;
+    /*“Busca los section que estén dentro de .contenedor-secciones, pero SOLO cuando el body tenga la clase modo-oscuro.”*/
+}
+
+body.modo-oscuro h2 {
+  color: white;
+}
+
+body.modo-oscuro nav {
+    background-color: #333333;
+}
+body.modo-oscuro a {
+    color: white;
+}
+
+/*Todas las reglas css que empiezan por body.modo-oscuro solo se aplican cuando el body tiene activada la clase modo-oscuro; si no se usan los estilos normales.

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nombre - Smart Room</title>
+    <link rel="stylesheet" href="css/iroom.css">
+    <!-- para poder vincularlo directamente con la hoja CSS -->
+
+</head>
+
+<body>
+
+
+    <main>
+ 
+        <header>
+            <h1>Nombre de usuario</h1>
+        </header>
+
+        <nav>
+         <a href="index.html">Inicio</a>
+            <a href="config.html">Configuración</a>
+           <a href="minombre.html">Nombre</a>
+        </nav>
+
+        <div class="contenedor-nombre">
+
+            <form id="form-nombre">
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <button type="submit">Guardar nombre</button>
+
+
+
+            </form>
+        
+        </div>
+
+    </main>
+
+    <script>
+
+        const formulario = document.getElementById("form-nombre"); // pilla el formulario por su ID
+        const nombre = document.getElementById("nombre");
+        formulario.addEventListener("submit", guardarNombre);
+        //estate atento cuand0 el formulario se envie, y llama a la función guardarNombre
+
+
+        function guardarNombre(event) {
+            event.preventDefault(); // evita que se recargue la página al enviar el formulario
+
+            localStorage.setItem("fname", nombre.value); // Guarda en localStorage el nombre escrito por el usuario con la clave "fname".
+
+            window.location.href = "index.html";
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
